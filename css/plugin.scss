@@ -2,7 +2,7 @@
 ---
 
 @import "normalize.css";
-@import "compass";
+// @import "compass";
 
 #q {
   position: absolute; top: 0; right: 0; left: 0;
@@ -14,9 +14,12 @@
   font-family: "Helvetica Neue";
   color: #444;
   outline: 0;
-  @include box-shadow(0 0 5px #dedede);
+  box-shadow: 0 0 5px #dedede;
 }
 
 #frame {
   position: absolute; top: 50px; bottom: 0; right: 0; left: 0;
+}
+iframe {
+  border: 0;
 }

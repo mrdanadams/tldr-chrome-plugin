@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "TL;DR",
+  "description": "Find what you want as fast as possible",
+  "version": "1.0",
+
+  "permissions": [
+    "http://www.google.com/"
+  ],
+
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
