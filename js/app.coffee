@@ -9,8 +9,8 @@ $ ->
   $q = $('#q')
 
   last = null
-  url = null
   t = null
+  changes = 0
 
   fire = ->
     q = $q.val()
@@ -25,15 +25,19 @@ $ ->
         return unless $a.length
 
         url = $a.attr('href')
-        # TODO using the history api so you don't crush your history
         chrome.tabs.update null, {url: url}
+        changes += 1
 
   $q.focus().on 'keydown', (e) ->
-    if e.keyCode == 13 || e.keyCode == 27 # enter or esc
+    if e.keyCode == 13 # enter
+      window.close()
+    else if e.keyCode == 27 # esc
+      if changes > 0
+        chrome.tabs.executeScript null, {code:"history.go(-#{changes});"}
       window.close()
     else
       # don't query until the user has stopped typing
-      window.clearTimeout(t) if t? 
+      window.clearTimeout(t) if t?
       t = window.setTimeout fire, 250
 
     true

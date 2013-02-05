@@ -6,11 +6,11 @@
   window = this;
 
   $(function() {
-    var $q, fire, last, t, url;
+    var $q, changes, fire, last, t;
     $q = $('#q');
     last = null;
-    url = null;
     t = null;
+    changes = 0;
     fire = function() {
       var q;
       q = $q.val();
@@ -22,20 +22,28 @@
         url: "http://www.google.com/custom?q=" + q,
         method: "GET",
         success: function(data) {
-          var $a;
+          var $a, url;
           $a = $(data).find('li a.l').first();
           if (!$a.length) {
             return;
           }
           url = $a.attr('href');
-          return chrome.tabs.update(null, {
+          chrome.tabs.update(null, {
             url: url
           });
+          return changes += 1;
         }
       });
     };
     return $q.focus().on('keydown', function(e) {
-      if (e.keyCode === 13 || e.keyCode === 27) {
+      if (e.keyCode === 13) {
+        window.close();
+      } else if (e.keyCode === 27) {
+        if (changes > 0) {
+          chrome.tabs.executeScript(null, {
+            code: "history.go(-" + changes + ");"
+          });
+        }
         window.close();
       } else {
         if (t != null) {
