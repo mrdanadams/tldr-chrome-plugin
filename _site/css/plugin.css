@@ -1,6 +1,2 @@
 @import url(normalize.css);
-#q { position: absolute; top: 0; right: 0; left: 0; border-radius: 5px; border: 1px solid #cccccc; margin: 5px; padding: 0 5px; height: 40px; font-size: 24px; line-height: 40px; font-weight: 100; font-family: "Helvetica Neue"; color: #444; outline: 0; box-shadow: 0 0 5px #dedede; }
-
-#frame { position: absolute; top: 50px; bottom: 0; right: 0; left: 0; }
-
-iframe { border: 0; }
+#q { border-radius: 5px; border: 1px solid #cccccc; margin: 5px; padding: 0 5px; height: 40px; font-size: 24px; line-height: 40px; font-weight: 100; font-family: "Helvetica Neue"; color: #444; outline: 0; box-shadow: 0 0 5px #dedede; width: 600px; max-width: 100%; }

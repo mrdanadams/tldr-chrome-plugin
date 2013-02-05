@@ -5,11 +5,13 @@
   "description": "Find what you want as fast as possible",
   "version": "1.0",
 
-  "permissions": [
-    "http://www.google.com/"
-  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "icon.png"
+    },
+    "default_title": "TL;DR",
+    "default_popup": "popup.html"
+  },
 
-  "chrome_url_overrides": {
-    "newtab": "index.html"
-  }
+  "permissions": [ "tabs", "http://www.google.com/" ]
 }

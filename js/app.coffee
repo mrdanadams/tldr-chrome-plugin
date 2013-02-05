@@ -1,12 +1,16 @@
 ---
 ---
 
+chrome = @chrome
+window = this
+
 $ ->
-  $frame = $('#frame')
+  # TODO remove zepto?
   $q = $('#q')
 
   last = null
   url = null
+  t = null
 
   fire = ->
     q = $q.val()
@@ -20,16 +24,16 @@ $ ->
         $a = $(data).find('li a.l').first()
         return unless $a.length
 
-        h = $frame.height()
         url = $a.attr('href')
-        $frame.html """<iframe src="#{url}" width="100%" height="#{h}px"></iframe>"""
-
-  fire = _.debounce(fire, 250)
+        # TODO using the history api so you don't crush your history
+        chrome.tabs.update null, {url: url}
 
   $q.focus().on 'keydown', (e) ->
-    if e.keyCode == 13 # enter
-      window.location.href = url
+    if e.keyCode == 13 || e.keyCode == 27 # enter or esc
+      window.close()
     else
-      fire()
+      # don't query until the user has stopped typing
+      window.clearTimeout(t) if t? 
+      t = window.setTimeout fire, 250
 
     true

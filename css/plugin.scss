@@ -2,10 +2,8 @@
 ---
 
 @import "normalize.css";
-// @import "compass";
 
 #q {
-  position: absolute; top: 0; right: 0; left: 0;
   border-radius: 5px;
   border: 1px solid #ccc;
   margin: 5px; padding: 0 5px;
@@ -15,11 +13,5 @@
   color: #444;
   outline: 0;
   box-shadow: 0 0 5px #dedede;
-}
-
-#frame {
-  position: absolute; top: 50px; bottom: 0; right: 0; left: 0;
-}
-iframe {
-  border: 0;
+  width: 600px; max-width: 100%;
 }

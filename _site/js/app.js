@@ -1,11 +1,16 @@
 (function() {
+  var chrome, window;
+
+  chrome = this.chrome;
+
+  window = this;
 
   $(function() {
-    var $frame, $q, fire, last, url;
-    $frame = $('#frame');
+    var $q, fire, last, t, url;
     $q = $('#q');
     last = null;
     url = null;
+    t = null;
     fire = function() {
       var q;
       q = $q.val();
@@ -17,23 +22,26 @@
         url: "http://www.google.com/custom?q=" + q,
         method: "GET",
         success: function(data) {
-          var $a, h;
+          var $a;
           $a = $(data).find('li a.l').first();
           if (!$a.length) {
             return;
           }
-          h = $frame.height();
           url = $a.attr('href');
-          return $frame.html("<iframe src=\"" + url + "\" width=\"100%\" height=\"" + h + "px\"></iframe>");
+          return chrome.tabs.update(null, {
+            url: url
+          });
         }
       });
     };
-    fire = _.debounce(fire, 250);
     return $q.focus().on('keydown', function(e) {
-      if (e.keyCode === 13) {
-        window.location.href = url;
+      if (e.keyCode === 13 || e.keyCode === 27) {
+        window.close();
       } else {
-        fire();
+        if (t != null) {
+          window.clearTimeout(t);
+        }
+        t = window.setTimeout(fire, 250);
       }
       return true;
     });
