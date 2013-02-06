@@ -17,7 +17,7 @@
     "scripts": ["js/background.js"]
   },
 
-  "permissions": [ "tabs", "http://*/*", "https://*/*" ],
+  "permissions": [ "tabs", "http://*/*", "https://*/*" ]
 
-  "update_url": "https://raw.github.com/mrdanadams/tldr-chrome-plugin/master/updates.xml"
+  // "update_url": "https://raw.github.com/mrdanadams/tldr-chrome-plugin/master/updates.xml"
 }

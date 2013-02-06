@@ -10,9 +10,14 @@ TLDR is a Chrome plugin that provides a "feeling lucky" instant search; instead 
 
 ## Installation
 
-_[Click here to install the plugin](https://raw.github.com/mrdanadams/tldr-chrome-plugin/master/tldr.crx)_
+_[Click here to download the plugin](https://raw.github.com/mrdanadams/tldr-chrome-plugin/master/tldr.crx)_
 
-The plugin uses auto-updating so it will stay up to date ... automatically.
+Then (It's not in the Chrome Web Store yet):
+
+1. Click the wrench icon on the browser toolbar.
+2. Select _Tools > Extensions_.
+3. Locate the extension file on your computer and drag the file onto the Extensions page.
+4. Review the list of permissions in the dialog that appears. If you would like to proceed, click _Install_.
 
 ## Usage
 
