@@ -14,7 +14,7 @@ _[Click here to download the plugin](https://raw.github.com/mrdanadams/tldr-chro
 
 Then (It's not in the Chrome Web Store yet):
 
-1. Click the wrench icon on the browser toolbar.
+1. Click the wrench icon (or 'bars' icon) on the browser toolbar.
 2. Select _Tools > Extensions_.
 3. Locate the extension file on your computer and drag the file onto the Extensions page.
 4. Review the list of permissions in the dialog that appears. If you would like to proceed, click _Install_.
