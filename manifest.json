@@ -5,12 +5,21 @@
   "description": "Find what you want as fast as possible",
   "version": "1.0",
 
-  "browser_action": {
-    "default_icon": {
-      "19": "icon.png"
-    },
-    "default_title": "TL;DR",
-    "default_popup": "popup.html"
+  // "browser_action": {
+  //   "default_icon": {
+  //     "19": "icon.png"
+  //   },
+  //   "default_title": "TL;DR",
+  //   "default_popup": "popup.html"
+  // },
+
+  "omnibox": { "keyword" : "!" },
+  "icons": {
+    "16": "icon.png"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["js/background.js"]
   },
 
   "permissions": [ "tabs", "http://*/*", "https://*/*" ]

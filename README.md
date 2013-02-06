@@ -1,18 +1,24 @@
-# TL;DR search plugin for Chrome
+# TLDR - Instant "feeling lucky" Chrome search plugin for the truly impatient
 
 Created by [Dan Adams](http://mrdanadams.com/) ([@danadams](https://twitter.com/danadams))
 
 ![TLDR](screenshot.png)
 
-TLDR is autocomplete for the internet. It's a Chrome plugin that provides instant search except the page you get is the first result in the search rather than the search results themselves. Great for looking up code reference and other such things where the first result is always right and you search for it often.
+TLDR is a Chrome plugin that provides a "feeling lucky" instant search; instead of search results the plugin loads the first result directly. TLDR is great for looking up code references or anything where the first result is usually what you want.
+
+[What does "tl;dr" mean?](http://en.wikipedia.org/wiki/Wikipedia:Too_long;_didn't_read)
 
 ## Usage
+
+In the omnibar simply type `!` followed by tab or space and your search terms. As you type the window below will be updated to reflect the best match for your search.
+
+Hit `esc` to discard the search and go back to the page you started on. Hitting `enter` will leave you on the search result.
+
+## Installation
 
 1. Clone the repo
 1. Go into Tools > Extensions in Chrome. Turn on developer mode. Add the plugin by selecting the `_site` directory.
 1. Configure a shortcut for the extension by going to _Tools > Extensions_ and hitting _Configure commands_ at the bottom:
-
-![Shortcut](shortcuts.png)
 
 ## Development
 
